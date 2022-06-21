@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+
+  <style>
+    body{
+      background: rgb(53, 53, 88);
+      color: white;
+      font: 14pt Tahoma;
+    }
+
+    button.remover{
+        position: absolute;
+        right: 100px;
+    }
+    ul li.naoRealizada{
+        list-style-type: '☐';
+        cursor: pointer;
+        text-indent: 10px;
+        color: red;
+        
+    }
+
+    ul li.realizada{
+        list-style-type: '☑';
+        cursor: pointer;
+        text-indent: 10px;
+        text-decoration: line-through;
+        color: rgb(15, 255, 15);
+        font-weight: bold;
+    }
+
+  </style>
 </head>
-<body>
-    <h1 id="t1">Introdução a linguagem JavaScript</h1>
-    <h2 id="t2"></h2>
-    <p>Escolha uma cor de fundo:</p>
-    <select id="coresFundo" onchange="mudaCorFundo()">
-        <option value="white">Branco</option>
-        <option value="blue">Azul</option>
-        <option value="yellow">Amarelo</option>
-        <option value="red">Vermelho</option>
-    </select>
+<body>  
+  <h2>Lista de Tarefas</h2>
 
-    <button onclick="print()">Imprimir</button>
-    <!--
-    <form id="formularioLogin" onsubmit="bemVindo(); return false;">
-        <input type="text" id="nomeUsuario" placeholder="usuário"/>
-        <input type="password" placeholder="senha"/>
-        <button type="submit">Entrar</button>
-    </form>
--->
+  <div>
+    <input type="text" id="caixaDeTexto" placeholder="Tarefa">
+    <button id="botaoAdicionar" class="adiconar">✚</button>
+
+      <select id="listaSuspensa" hidden>
+        <option>--Selecione uma opção--</option>
+        <option>Marcar todas as Tarefas</option>
+        <option>Desmarcar todas as Tarefas</option>
+        <option>Limpar a lista de Tarefas</option>
 
 
+      </select>
+
+  </div>
+
+  <ul id="listaTarefas">
+
+  </ul>
 
   <script src="index.js"></script>
+  
 </body>
+
 </html>
